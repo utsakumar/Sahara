@@ -81,12 +81,12 @@
 
 * {
   font-family: "Google Sans", sans-serif;
+  color: var(--text);
 }
 
 body {
   margin: 0;
   background-color: var(--crust);
-  color: var(--text);
 }
 
 header {
@@ -96,6 +96,19 @@ header {
   align-items: center;
   border-bottom: 1px solid var(--surface0);
   background-color: var(--mantle);
+}
+
+button {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--surface1);
+  background-color: var(--surface0);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+button:hover {
+  background: var(--surface1);
 }
 
 .logo {
@@ -129,16 +142,6 @@ a[aria-current="page"] {
   display: flex;
   align-items: center;
   gap: 20px;
-}
-
-.seller-btn {
-  padding: 8px 16px;
-  border-radius: 20px;
-  border: 1px solid var(--surface1);
-  background-color: var(--surface0);
-  color: var(--text);
-  cursor: pointer;
-  font-weight: 500;
 }
 
 .seller-btn:hover {
@@ -258,6 +261,7 @@ main {
 
 .buy-btn {
   background-color: var(--green);
+  color: var(--base);
   font-size: 16px;
   font-weight: 500;
   padding: 12px 24px;
@@ -293,7 +297,7 @@ main {
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .dot {
@@ -306,4 +310,76 @@ main {
 
 .dot.active {
   background: var(--yellow);
+}
+
+.product-section h2 {
+  margin-bottom: 30px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: var(--base);
+  border-radius: 16px;
+  padding: 16px;
+  position: relative;
+}
+
+.product-card h3 {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.product-card .desc {
+  font-size: 13px;
+  color: var(--subtext0);
+  margin-bottom: 8px;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-weight: 600;
+}
+
+.wishlist {
+  position: absolute;
+  display: flex;
+  top: 12px;
+  right: 12px;
+  background: var(--surface0);
+  border: none;
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.wishlist .material-icons-outlined {
+  font-size: 20px;
+}
+
+.product-image {
+  transition: transform 0.2s ease;
+}
+
+.product-image:hover {
+  transform: translateY(-4px);
+}
+
+.product-image img {
+  width: 100%;
+  height: 180px;
+}
+
+.see-more {
+  text-align: center;
+  margin-top: 30px;
 }
