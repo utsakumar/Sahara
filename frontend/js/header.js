@@ -1,4 +1,4 @@
-import { initSearch } from "/js/search.js";
+import { initSearch } from "./search.js";
 
 function getHeaderUrl() {
   return "/partials/header.html";

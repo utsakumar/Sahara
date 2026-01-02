@@ -387,3 +387,77 @@ main {
   text-align: center;
   margin-top: 30px;
 }
+
+.spec {
+  margin: 60px auto;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.spec p {
+  margin-bottom: 40px;
+  color: var(--subtext0);
+  max-width: 600px;
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .spec-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.spec-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--base);
+  border: 1px solid var(--surface1);
+  border-radius: 16px;
+  padding: 20px 60px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.spec-card:hover {
+  transform: translateY(-6px);
+}
+
+.spec-card .material-icons-outlined {
+  font-size: 48px;
+  margin-top: 25px;
+}
+
+.spec-card.free-shipping * {
+  color: var(--green);
+}
+
+.spec-card.free-shipping:hover {
+  box-shadow: 0 0 10px var(--green);
+}
+
+.spec-card.support * {
+  color: var(--blue);
+}
+
+.spec-card.support:hover {
+  box-shadow: 0 0 10px var(--blue);
+}
+
+.spec-card.easy-returns * {
+  color: var(--yellow);
+}
+
+.spec-card.easy-returns:hover {
+  box-shadow: 0 0 10px var(--yellow);
+}
