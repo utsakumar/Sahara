@@ -1,11 +1,11 @@
 const scriptElement = document.currentScript;
-const rootUrl = new URL("../..", scriptElement.src);
+const rootUrl = new URL("..", scriptElement.src);
 
 const navLinks = [
   { href: "index.html", label: "Home" },
-  { href: "src/pages/shop.html", label: "Shop" },
-  { href: "src/pages/about.html", label: "About" },
-  { href: "src/pages/contact.html", label: "Contact" },
+  { href: "pages/shop.html", label: "Shop" },
+  { href: "pages/about.html", label: "About" },
+  { href: "pages/contact.html", label: "Contact" },
 ];
 
 document.addEventListener("DOMContentLoaded", async () => {
