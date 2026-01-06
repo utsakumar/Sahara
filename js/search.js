@@ -1,4 +1,4 @@
-export function initSearch() {
+(() => {
   const header = document.querySelector("header");
   const toggleBtn = document.getElementById("search-toggle");
   const searchForm = document.getElementById("search-form");
@@ -36,4 +36,4 @@ export function initSearch() {
       toggleSearch(false);
     }
   });
-}
+})();
