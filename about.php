@@ -5,12 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sahara | About</title>
-  <link rel="icon" href="../assets/favicon.ico" />
-  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="css/main.css" />
 </head>
 
 <body>
-  <?php include '../partials/header.php'; ?>
+  <?php include 'partials/header.php'; ?>
 
   <main>
     <section>
@@ -22,7 +22,7 @@
     </section>
   </main>
 
-  <?php include '../partials/footer.html'; ?>
+  <?php include 'partials/footer.html'; ?>
 </body>
 
 </html>
