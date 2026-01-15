@@ -5,9 +5,11 @@ import {
   showError,
   updatePasswordStrengthUI,
   validateEmailField,
+  validateGenderSelect,
   validateNameField,
   validatePasswordField,
   validatePhoneField,
+  validateTermsCheckbox,
 } from "./auth.js";
 
 (() => {
@@ -17,6 +19,7 @@ import {
   const nameInput = document.getElementById("name");
   const emailInput = document.getElementById("email");
   const phoneInput = document.getElementById("phone");
+  const genderSelect = document.getElementById("gender");
   const passwordInput = document.getElementById("password");
   const confirmPasswordInput = document.getElementById("confirm_password");
   const termsCheckbox = document.getElementById("terms");
@@ -24,6 +27,7 @@ import {
   const nameError = document.getElementById("name-error");
   const emailError = document.getElementById("email-error");
   const phoneError = document.getElementById("phone-error");
+  const genderError = document.getElementById("gender-error");
   const passwordError = document.getElementById("password-error");
   const confirmPasswordError = document.getElementById(
     "confirm-password-error",
@@ -41,6 +45,7 @@ import {
     const isNameValid = validateName();
     const isEmailValid = validateEmail();
     const isPhoneValid = validatePhone();
+    const isGenderValid = validateGender();
     const isPasswordValid = validatePassword();
     const isConfirmPasswordValid = validateConfirmPassword();
     const isTermsValid = validateTerms();
@@ -49,6 +54,7 @@ import {
       isNameValid &&
       isEmailValid &&
       isPhoneValid &&
+      isGenderValid &&
       isPasswordValid &&
       isConfirmPasswordValid &&
       isTermsValid;
@@ -72,6 +78,9 @@ import {
 
   phoneInput.addEventListener("blur", validatePhone);
   phoneInput.addEventListener("input", validatePhone);
+
+  genderSelect.addEventListener("blur", validateGender);
+  genderSelect.addEventListener("change", validateGender);
 
   passwordInput.addEventListener("blur", validatePassword);
   passwordInput.addEventListener("input", () => {
@@ -97,6 +106,10 @@ import {
 
   function validatePhone() {
     return validatePhoneField(phoneInput, phoneError);
+  }
+
+  function validateGender() {
+    return validateGenderSelect(genderSelect, genderError);
   }
 
   function validatePassword() {
@@ -130,11 +143,6 @@ import {
   }
 
   function validateTerms() {
-    if (!termsCheckbox.checked) {
-      showError(termsError, "You must agree to the terms");
-      return false;
-    }
-    clearError(termsError);
-    return true;
+    return validateTermsCheckbox(termsCheckbox, termsError);
   }
 })();

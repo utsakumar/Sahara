@@ -20,7 +20,7 @@
           <p>Create an account to start shopping today</p>
         </div>
 
-        <form action="" method="post" class="auth-form" id="signup-form">
+        <form action="" method="post" class="auth-form" id="signup-form" novalidate>
           <div class="form-group">
             <label for="name">Full Name</label>
             <input type="text" name="name" id="name" placeholder="Enter your full name" value="<?php echo htmlspecialchars($_POST['name'] ?? ''); ?>">
@@ -37,6 +37,19 @@
             <label for="phone">Phone Number</label>
             <input type="tel" name="phone" id="phone" placeholder="+880 1234-567890" value="<?php echo htmlspecialchars($_POST['phone'] ?? ''); ?>">
             <span class="error-message" id="phone-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <div class="select-container">
+              <select name="gender" id="gender" required>
+                <option disabled value="" selected>Select your gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <span class="error-message" id="gender-error"></span>
           </div>
 
           <div class="form-group">

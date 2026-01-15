@@ -699,7 +699,6 @@ footer {
   border: 1px solid var(--surface0);
   background: var(--mantle);
   color: var(--text);
-  margin-bottom: 20px;
   appearance: none;
 }
 
@@ -717,7 +716,7 @@ footer {
   border-bottom: 2px solid var(--subtext0);
   top: 50%;
   right: 12px;
-  margin-top: -16px;
+  margin-top: -8px;
   transform: rotate(45deg);
   pointer-events: none;
 }

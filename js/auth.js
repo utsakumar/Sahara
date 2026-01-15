@@ -149,6 +149,33 @@ export function validateNameField(
   return true;
 }
 
+export function validateGenderSelect(select, errorElement) {
+  const value = select.value;
+
+  if (value === "") {
+    showError(errorElement, "Please select your gender");
+    return false;
+  }
+
+  const genderOptions = ["male", "female", "other"];
+  if (!genderOptions.includes(value)) {
+    showError(errorElement, "Invalid gender selection");
+    return false;
+  }
+
+  clearError(errorElement);
+  return true;
+}
+
+export function validateTermsCheckbox(checkbox, errorElement) {
+  if (!checkbox.checked) {
+    showError(errorElement, "You must agree to the terms");
+    return false;
+  }
+  clearError(errorElement);
+  return true;
+}
+
 export function setupPasswordToggles() {
   const toggleButtons = document.querySelectorAll(".toggle-password");
 
