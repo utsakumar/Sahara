@@ -1,34 +1,22 @@
+import { clearError, validateEmailField } from "./auth.js";
+
 (() => {
   const form = document.querySelector(".newsletter-form");
   if (!form) return;
 
-  const email = document.getElementById("email");
-  const error = document.getElementById("email-error");
-
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailInput = document.getElementById("email");
+  const emailError = document.getElementById("email-error");
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-
-    if (!email.value) {
-      showError("Email is required.");
-    } else if (!emailRegex.test(email.value)) {
-      showError("Please enter a valid email address.");
-    } else {
-      clearError();
-      console.log("Submitted email:", email.value);
-    }
+    validateEmailField(emailInput, emailError);
   });
 
-  function showError(message) {
-    error.innerHTML = `
-      <span class="material-symbols-outlined">error</span>${message}
-    `;
-    error.style.display = "inline-flex";
-  }
+  emailInput.addEventListener("blur", () => {
+    validateEmailField(emailInput, emailError);
+  });
 
-  function clearError() {
-    error.textContent = "";
-    error.style.display = "none";
-  }
+  emailInput.addEventListener("input", () => {
+    clearError(emailError);
+  });
 })();

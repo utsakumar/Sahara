@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/main.css" />
   <script type="module" src="js/home.js"></script>
   <script defer src="js/hero.js"></script>
-  <script defer src="js/newsletter.js"></script>
+  <script type="module" src="js/newsletter.js"></script>
 </head>
 
 <body>
@@ -34,7 +34,7 @@
 
       <div class="see-more">
         <button>
-          <a href="/pages/shop.php">See more</a>
+          <a href="shop.php">See more</a>
         </button>
       </div>
     </section>
