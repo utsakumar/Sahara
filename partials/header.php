@@ -22,8 +22,12 @@ checkRememberToken();
     <a href="shop.php" <?php echo aria_current('/shop.php'); ?>>Shop</a>
     <a href="about.php" <?php echo aria_current('/about.php'); ?>>About</a>
     <a href="contact.php" <?php echo aria_current('/contact.php'); ?>>Contact</a>
-    <a href="seller.php" <?php echo aria_current('/seller.php'); ?> aria-label="Seller">Seller</a>
-    <a href="admin.php" <?php echo aria_current('/admin.php'); ?> aria-label="Admin">Admin</a>
+    <?php if (isset($_SESSION['user_role']) && in_array($_SESSION['user_role'], ['SELLER', 'ADMIN'])): ?>
+      <a href="seller.php" <?php echo aria_current('/seller.php'); ?> aria-label="Seller">Seller</a>
+    <?php endif; ?>
+    <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'ADMIN'): ?>
+      <a href="admin.php" <?php echo aria_current('/admin.php'); ?> aria-label="Admin">Admin</a>
+    <?php endif; ?>
   </nav>
 
   <div class="header-right">
@@ -51,15 +55,15 @@ checkRememberToken();
         <div class="account-dropdown">
           <button class="btn-account" type="button" id="account-btn" aria-expanded="false" aria-controls="account-menu">
             <span class="material-symbols-outlined">account_circle</span>
-            <span class="btn-account-text"><?php echo htmlspecialchars($_SESSION['user_fname']); ?></span>
+            <span class="btn-account-text"><?php echo $_SESSION['user_fname']; ?></span>
           </button>
 
           <div class="account-menu" id="account-menu" role="menu" aria-hidden="true">
             <div class="account-menu-header">
               <span class="material-symbols-outlined">person</span>
               <div>
-                <p class="user-name"><?php echo htmlspecialchars($_SESSION['user_fname'] . ' ' . $_SESSION['user_lname']); ?></p>
-                <p class="user-email"><?php echo htmlspecialchars($_SESSION['user_email']); ?></p>
+                <p class="user-name"><?php echo $_SESSION['user_fname'] . ' ' . $_SESSION['user_lname']; ?></p>
+                <p class="user-email"><?php echo $_SESSION['user_email']; ?></p>
               </div>
             </div>
 
